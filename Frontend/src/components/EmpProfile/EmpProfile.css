@@ -1,0 +1,140 @@
+.profile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  gap: 20px;
+  margin-top: 30px;
+  align-items: flex-end;
+
+}
+
+.right .right-img {
+  width: 500px;
+  height: 450px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  bottom: 50px;
+  left: 60px;
+
+}
+
+.left {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.0rem;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+#header-text {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 10px;
+}
+
+.left-container {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  margin-top: 20px;
+
+}
+
+
+.left img {
+  width: 90px;
+  border-radius: 60%;
+}
+
+.right .bg-darkblue {
+  height: 600px;
+  width: 200px;
+
+  background-color: darkblue;
+}
+
+.form2 {
+  width: 100%;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px 35px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #1a237e;
+  font-weight: 600;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #3f51b5;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.15);
+}
+
+.book {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #3f51b5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.book:hover {
+  background-color: #303f9f;
+}

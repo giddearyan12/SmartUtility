@@ -1,0 +1,31 @@
+.card {
+    width: 270px; 
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    gap: 20px;
+    margin-top: 15px;
+  }
+  
+  .card img {
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    margin-left: 15px;
+    
+  }
+  .card:hover{
+    border: 3px solid orange;
+  }
+  
+  .card h3 {
+    margin: 10px 0;
+  }
+  

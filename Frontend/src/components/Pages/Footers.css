@@ -1,0 +1,23 @@
+.footers{
+    margin-top: 40px;
+    background-color: #F8F5FF;
+    width: 100%;
+    height: 230px;
+    position: relative;
+   
+    
+}
+.footers-display{
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.footers-display ul li{
+    list-style: none;
+    margin-top: 10px;
+}
+.footers-display h3{
+    border-bottom: 2px solid orange;
+    padding-bottom: 5px;
+}

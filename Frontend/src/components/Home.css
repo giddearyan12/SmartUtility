@@ -1,0 +1,151 @@
+.homePage{
+
+height: 100vh;
+
+}
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    
+   margin-left: 90px;
+    
+    
+}
+.coverPage{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    
+}
+
+
+.description {
+    font-size: 50px;
+    color: darkblue;
+
+}
+.description span{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.description span span{
+    color: orange;
+}
+.description hr{
+    background-color: orange;
+    height: 2px;
+    margin-top: 25px;
+    border: none;
+    padding: 2px;
+}
+.services{
+    font-size: 40px;
+    color:darkblue;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+#city-name{
+  font-size: 2rem;
+  color: black;
+  margin-top: 10px;
+}
+.services span{
+    font-size: 20px;
+    color: orange;
+}
+.image {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
+.city-box{
+  display: flex;
+align-items: center;
+gap: 10px;
+}
+#city-box-btn{
+width: 10%;
+margin-top: 7px;
+font-size: 22px;
+
+border: none;
+background: transparent;
+}
+
+.blue, .orange{
+    width: 350px;
+    height: 370px;
+    border: 2px solid black;
+    position: absolute;
+    top: 130px;
+    animation: tilt 3s infinite ease-in-out;
+}
+.blue{
+    background-color: darkblue;
+    
+    left: -20px;
+    z-index: 1;
+    animation-direction: alternate-reverse;
+    
+}
+.orange{
+    background-color: orange;
+    
+    left: -20px;
+    z-index: 0;
+    animation-direction: alternate;
+}
+.image img{
+    position: relative;
+    height: 500px;
+    z-index: 2;
+}
+.description input{
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+}
+.description #sub{
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    background-color: orange;
+    color: black;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+@keyframes tilt {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(5deg); /* Tilt to the right */
+    }
+    50% {
+      transform: rotate(0deg); /* Back to center */
+    }
+    75% {
+      transform: rotate(-5deg); /* Tilt to the left */
+    }
+    100% {
+      transform: rotate(0deg); /* Back to center */
+    }
+  }
+  

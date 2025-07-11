@@ -1,0 +1,98 @@
+
+.postjob-form {
+  flex: 1;
+  width: 43%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 40px;
+  gap: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+}
+
+.postjob-form #post-job-title {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.postjob-form input,
+.postjob-form select {
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.postjob-form input:focus,
+.postjob-form select:focus {
+  border-color: darkblue;
+}
+
+.postjob-form button {
+  background-color: darkblue;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.postjob-form button:hover {
+  background-color: darkblue;
+}
+
+.weekdays-container {
+  min-height: 100px;
+  margin-bottom: 10px;
+}
+
+.checkbox-group {
+display: flex;
+margin-top: 10px;
+flex-wrap: wrap;
+gap: 12px;
+margin-top: 10px;
+}
+
+.checkbox-label {
+ background-color: #f1f5f9;
+ padding: 10px 12px;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  min-width: 120px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+
+}
+
+.checkbox-label:hover {
+  background-color: #e2e8f0;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .postjob-card {
+    flex-direction: column;
+  }
+
+  .postjob-form {
+    padding: 20px;
+  }
+
+  .postjob-image img {
+    max-width: 100%;
+  }
+}

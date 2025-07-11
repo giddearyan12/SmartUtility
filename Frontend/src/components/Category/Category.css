@@ -1,0 +1,41 @@
+.category-header
+{
+    font-size: 40px;
+    padding: 15px;
+    color: darkblue;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
+   
+}
+.category-header img{
+    width: 50px;
+    height: 60px;
+}
+.category-header .cat-title{
+    color: orange;
+}
+.CardEmp {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    place-items: center;
+    padding: 20px;
+    position: relative; 
+    z-index: 1;
+}
+
+
+
+.sub-category{
+    background-color: blue;
+    height: 250px;
+    
+}
+.Emp_List h2{
+    font-size: 27px;
+    margin-top: 10px;
+    margin-left: 15px;
+    color: darkblue;
+}
