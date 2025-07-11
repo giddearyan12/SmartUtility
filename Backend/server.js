@@ -13,8 +13,9 @@ import mongoose from 'mongoose'
 const port = 4000
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/Subs')
-.then(()=>console.log("MongoDB Connected"));
+mongoose.connect('mongodb+srv://giddearyan222:D8uRNStECM7qX3pn@cluster.qudnwbg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster')
+.then(() => console.log("✅ MongoDB Connected"))
+.catch((err) => console.log("❌ MongoDB Error:", err));
 
 
 
