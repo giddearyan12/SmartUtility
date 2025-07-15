@@ -5,6 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const Appointments = () => {
+    const url = 'https://smartutility-2.onrender.com/';
     const token = localStorage.getItem('token');
     const [userRole, setUserRole] = useState('');
     const [userAppointments, setUserAppointments] = useState([]);
@@ -17,7 +18,7 @@ const Appointments = () => {
     }
     const handleStatus = async (id, status) => {
         try {
-            const response = await axios.post('http://localhost:4000/job/cancel-appoint', { id, status });
+            const response = await axios.post(`${url}/job/cancel-appoint, { id, status });
             toast.success(response.data.success)
             fetchData();
         } catch (error) {
@@ -30,7 +31,7 @@ const Appointments = () => {
             toast.warn("You are not Logged In")
             return;
         }
-       const response = await axios.get('http://localhost:4000/user/getuser', {
+       const response = await axios.get(`${url}/user/getuser`, {
                 params: { userId },
                 headers:{
                     Authorization:`Bearer ${token}`
@@ -39,13 +40,13 @@ const Appointments = () => {
         const name = response.data.user.name;
         setUserRole(response.data.user.role);
         if (response.data.user.role == 'User') {
-            const response1 = await axios.get('http://localhost:4000/user/getuserappoints', {
+            const response1 = await axios.get(`${url}/user/getuserappoints`, {
                 params: { name }
             })
             setUserAppointments(response1.data.appointments);
         }
         else {
-            const response2 = await axios.get('http://localhost:4000/job/getappointments', {
+            const response2 = await axios.get(`${url}/job/getappointments`, {
                 params: { name }
             })
             setEmpAppointments(response2.data.appointments);
