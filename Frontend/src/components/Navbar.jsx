@@ -28,6 +28,8 @@ const Navbar = () => {
       }
       if (!modalEl.current.contains(e.target)) {
         setShowMenu(false)
+        setMobileMenu(false)
+
       }
     };
 
@@ -64,6 +66,8 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     setisLogin(false);
+        setMobileMenu(false)
+
     localStorage.removeItem('token');
     localStorage.removeItem('city');
     await axios.get(`${url}/user/logout`, {
@@ -76,10 +80,14 @@ const Navbar = () => {
   const openAppointments = () => {
     navigate('/appointments');
     setShowMenu(false);
+        setMobileMenu(false)
+
   }
   const openProfile = () => {
     navigate('/profile');
     setShowMenu(false);
+        setMobileMenu(false)
+
   }
 
   const [showLogin, setShowLogin] = useState(false)
@@ -88,11 +96,15 @@ const Navbar = () => {
     setShowLogin(true);
     document.body.classList.add('blur');
     setShowMenu(false);
+        setMobileMenu(false)
+
   };
 
 
   const handleCloseLogin = () => {
     setShowLogin(false);
+        setMobileMenu(false)
+
     document.body.classList.remove('blur');
   };
   return (
