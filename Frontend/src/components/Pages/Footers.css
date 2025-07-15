@@ -35,9 +35,13 @@
     justify-content: space-around;
     align-items: center;
 }
+.footers-display ul li{
+    list-style: none;
+    font-size: 10px;
+}
 
 .footers-display h3{
     border-bottom: 1px solid orange;
-    font-size: 12px;
+    font-size: 14px;
 }
 }
