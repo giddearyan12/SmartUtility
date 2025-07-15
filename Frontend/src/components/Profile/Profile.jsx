@@ -24,7 +24,7 @@ const Profile = () => {
     }
     useEffect(() => {
         if(!token){
-            toast.warn("You are not Logged In")
+            toast.warn("You are not Logged In");
             return;
         }
         const userId = jwtDecode(token)._id;
