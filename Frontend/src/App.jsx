@@ -23,13 +23,13 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/category/:title" element={<Category />} />
-        <Route path="/postjob" element={<PostJob />} />
-        <Route path="/empprofile" element={<EmpProfile />} />
-        <Route path="/appointments" element={<Appointments />} />
+        <Route path="/category/:title" element={authUser?<Category />:<Home /> } />
+        <Route path="/postjob" element={authUser?<PostJob />:<Home />} />
+        <Route path="/empprofile" element={authUser?<EmpProfile />:<Home />} />
+        <Route path="/appointments" element={authUser?<Appointments />:<Home />} />
         <Route
           path="/profile"
-          element={authUser ? <Profile /> : <Profile />}
+          element={authUser ? <Profile /> : <Home />}
         />
 
 
