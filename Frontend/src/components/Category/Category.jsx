@@ -10,7 +10,7 @@ const Category = () => {
   const [empData, setEmpData] = useState([]);
   const [catImg, setCatImg] = useState('');
   const { title } = useParams(); 
-  const url = 'https://smartutility-2.onrender.com/'
+  const url = 'https://smartutility-2.onrender.com'
     const { city, setCity } = useCity();
 
 
