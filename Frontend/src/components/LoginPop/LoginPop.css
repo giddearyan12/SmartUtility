@@ -1,41 +1,43 @@
 .Container {
-    position: absolute;
-    z-index: 10;
-    width: 100%;
-    height: 530vh;
-    background-color: #00000090;
-
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 530vh;
+  background-color: #00000090;
 }
 
 .login-pop {
-    width: 450px;
-    height: 480px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: fixed;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    top: 150px;
-    right: 500px;
-    border: 2px solid black;
-    z-index: 1000;
+  width: 450px;
+  height: 480px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  top: 150px;
+  right: 500px;
+  border: 2px solid black;
+  z-index: 1000;
+
+  /* Center it */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .login-pop form {
-    display: flex;
-    flex-direction: column;
-    margin: 0 40px;
-    gap: 20px;
-    background-color: white;
-    border: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0 40px;
+  gap: 20px;
+  background-color: white;
+  border: none;
 }
 
 .login-pop h2 {
-    color: darkblue;
-    font-size: 30px;
-
-    text-align: center;
+  color: darkblue;
+  font-size: 30px;
+  text-align: center;
 }
 
 .login-pop input,
@@ -46,23 +48,22 @@
   border-radius: 6px;
   font-size: 14px;
   background-color: white;
-
   outline: none;
 }
+
 .login-pop input:focus,
-.login-pop select:focus{
-    border: 1px solid darkblue;
+.login-pop select:focus {
+  border: 1px solid darkblue;
 }
 
-
 .login-pop p {
-    text-align: center;
-    margin-top: 10px;
-    cursor: pointer;
+  text-align: center;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .login-pop .submit {
-     width: 100%;
+  width: 100%;
   padding: 12px;
   font-size: 16px;
   background-color: #3f51b5;
@@ -72,16 +73,63 @@
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.25s ease;
-
 }
 
 .close-pop {
+  color: red;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: white;
+}
 
-    color: red;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border: none;
-    background-color: white;
+/* ✅ Responsive Styling */
+@media (max-width: 768px) {
+  .login-pop {
+    width: 90%;
+    height: auto;
+    top: 100px;
+    padding: 20px;
+  }
 
+  .login-pop form {
+    margin: 0 20px;
+    gap: 15px;
+  }
+
+  .login-pop h2 {
+    font-size: 24px;
+  }
+
+  .login-pop .submit {
+    padding: 10px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-pop {
+    top: 80px;
+    padding: 15px;
+  }
+
+  .login-pop h2 {
+    font-size: 20px;
+  }
+
+  .login-pop form {
+    margin: 0 15px;
+    gap: 12px;
+  }
+
+  .login-pop .submit {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .close-pop {
+    top: 8px;
+    right: 8px;
+  }
 }
