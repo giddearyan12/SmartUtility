@@ -8,6 +8,7 @@ import pro from '../../assets/pro.jpeg';
 import axios from 'axios';
 
 const EmpProfile = () => {
+  const url ='https://smartutility-2.onrender.com/'
   const location = useLocation();
   const [catImg, setCatImg] = useState('');
   const [data, setData] = useState({});
@@ -22,7 +23,7 @@ const EmpProfile = () => {
   const { email, title } = location.state;
   const fetchEmpData = async () => {
     try {
-      const response = await axios.post('http://localhost:4000/user/getemployee', { email }, {
+      const response = await axios.post(`${url}/user/getemployee`, { email }, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -38,7 +39,7 @@ const EmpProfile = () => {
     try {
       const token = localStorage.getItem('token');
       const userId = jwtDecode(token)._id;
-      const response = await axios.get('http://localhost:4000/user/getuser', {
+      const response = await axios.get(`${url}/user/getuser`, {
         params: { userId },
         headers: {
           'Content-Type': 'application/json',
@@ -54,9 +55,9 @@ const EmpProfile = () => {
   };
   const fetch = async () => {
     try {
-      const newurl = `http://localhost:4000/category/${title}`;
+      const newurl = `${url}/category/${title}`;
       const response = await axios.get(newurl);
-      const imageUrl = `http://localhost:4000/${response.data.img}`;
+      const imageUrl = `${url}/${response.data.img}`;
       setCatImg(imageUrl);
 
     } catch (error) {
@@ -97,7 +98,7 @@ const EmpProfile = () => {
         toast.warn("You can't book you own appointment !")
         return;
       }
-      const response = await axios.post('http://localhost:4000/job/bookappointment', { formData: formData });
+      const response = await axios.post(`${url}/job/bookappointment', { formData: formData });
 
 
       if (response.data.success) {
