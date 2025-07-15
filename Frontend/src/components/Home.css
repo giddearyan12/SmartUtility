@@ -1,121 +1,135 @@
-.homePage{
-
-height: 100vh;
-
+.homePage {
 }
+
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-    
-   margin-left: 90px;
-    
-    
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 90px;
+
+
 }
-.coverPage{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 40px;
-    
+
+.coverPage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+
 }
 
 
 .description {
-    font-size: 50px;
-    color: darkblue;
+  font-size: 50px;
+  color: darkblue;
 
 }
-.description span{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+.description span {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.description span span{
-    color: orange;
+
+.description span span {
+  color: orange;
 }
-.description hr{
-    background-color: orange;
-    height: 2px;
-    margin-top: 25px;
-    border: none;
-    padding: 2px;
+
+.description hr {
+  background-color: orange;
+  height: 2px;
+  margin-top: 25px;
+  border: none;
+  padding: 2px;
 }
-.services{
-    font-size: 40px;
-    color:darkblue;
-    margin-left: 60px;
-    margin-top: 20px;
+
+.services {
+  font-size: 40px;
+  color: darkblue;
+  margin-left: 60px;
+  margin-top: 20px;
 }
-#city-name{
+
+#city-name {
   font-size: 2rem;
   color: black;
   margin-top: 10px;
 }
-.services span{
-    font-size: 20px;
-    color: orange;
+
+.services span {
+  font-size: 20px;
+  color: orange;
 }
+
 .image {
-    position: relative;
-    width: fit-content;
-    height: fit-content;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
 }
-.city-box{
+
+.city-box {
   display: flex;
-align-items: center;
-gap: 10px;
-}
-#city-box-btn{
-width: 10%;
-margin-top: 7px;
-font-size: 22px;
-
-border: none;
-background: transparent;
+  align-items: center;
+  gap: 10px;
 }
 
-.blue, .orange{
-    width: 350px;
-    height: 370px;
-    border: 2px solid black;
-    position: absolute;
-    top: 130px;
-    animation: tilt 3s infinite ease-in-out;
+#city-box-btn {
+  width: 10%;
+  margin-top: 7px;
+  font-size: 22px;
+
+  border: none;
+  background: transparent;
 }
-.blue{
-    background-color: darkblue;
-    
-    left: -20px;
-    z-index: 1;
-    animation-direction: alternate-reverse;
-    
+
+.blue,
+.orange {
+  width: 350px;
+  height: 370px;
+  border: 2px solid black;
+  position: absolute;
+  top: 130px;
+  animation: tilt 3s infinite ease-in-out;
 }
-.orange{
-    background-color: orange;
-    
-    left: -20px;
-    z-index: 0;
-    animation-direction: alternate;
+
+.blue {
+  background-color: darkblue;
+
+  left: -20px;
+  z-index: 1;
+  animation-direction: alternate-reverse;
+
 }
-.image img{
-    position: relative;
-    height: 500px;
-    z-index: 2;
+
+.orange {
+  background-color: orange;
+
+  left: -20px;
+  z-index: 0;
+  animation-direction: alternate;
 }
-.description input{
-    width: 100%;
-    padding: 10px;
-    font-size: 15px;
+
+.image img {
+  position: relative;
+  height: 500px;
+  z-index: 2;
 }
-.description #sub{
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    width: 100%;
-    background-color: orange;
-    color: black;
-    font-weight: 600;
+
+.description input {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.description #sub {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+  background-color: orange;
+  color: black;
+  font-weight: 600;
 }
 
 @keyframes fadeIn {
@@ -123,6 +137,7 @@ background: transparent;
     opacity: 0;
     transform: translateY(5px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -132,20 +147,86 @@ background: transparent;
 
 
 @keyframes tilt {
-    0% {
-      transform: rotate(0deg);
-    }
-    25% {
-      transform: rotate(5deg); /* Tilt to the right */
-    }
-    50% {
-      transform: rotate(0deg); /* Back to center */
-    }
-    75% {
-      transform: rotate(-5deg); /* Tilt to the left */
-    }
-    100% {
-      transform: rotate(0deg); /* Back to center */
-    }
+  0% {
+    transform: rotate(0deg);
   }
-  
+
+  25% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .coverPage {
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .description {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .description hr {
+    margin: 15px auto;
+  }
+
+  .services {
+    font-size: 20px;
+    margin-left: 20px;
+  }
+
+  .services span {
+    font-size: 14px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .image img {
+    height: 300px;
+    width: 100%;
+  }
+
+  .blue,
+  .orange {
+    width: 90%;
+    height: 220px;
+    top: 80px;
+    left: 0;
+  }
+
+  #city-box-btn {
+    width: auto;
+    font-size: 10px;
+  }
+
+  #city-name {
+    font-size: 1.3rem;
+    margin-top: 5px;
+  }
+
+  .description input,
+  .description #sub {
+    font-size: 8px;
+    width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  }
+}
