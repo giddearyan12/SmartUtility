@@ -1,5 +1,4 @@
-.category-header
-{
+.category-header {
     font-size: 40px;
     padding: 15px;
     color: darkblue;
@@ -7,35 +6,83 @@
     align-items: center;
     justify-content: flex-start;
     gap: 25px;
-   
+
 }
-.category-header img{
+
+.category-header img {
     width: 50px;
     height: 60px;
 }
-.category-header .cat-title{
+
+.category-header .cat-title {
     color: orange;
 }
+
 .CardEmp {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; 
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     place-items: center;
     padding: 20px;
-    position: relative; 
+    position: relative;
     z-index: 1;
 }
 
 
 
-.sub-category{
+.sub-category {
     background-color: blue;
     height: 250px;
-    
+
 }
-.Emp_List h2{
+
+.Emp_List h2 {
     font-size: 27px;
     margin-top: 10px;
     margin-left: 15px;
     color: darkblue;
+}
+
+@media screen and (max-width:768px) {
+    .category-header {
+        font-size: 25px;
+        padding: 15px;
+        color: darkblue;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 25px;
+
+    }
+
+    .category-header img {
+        width: 50px;
+        height: 60px;
+    }
+
+    .category-header .cat-title {
+        color: orange;
+    }
+
+    .CardEmp {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        place-items: center;
+        padding: 20px;
+        position: relative;
+        z-index: 1;
+    }
+    .sub-category {
+        background-color: blue;
+        height: 250px;
+
+    }
+
+    .Emp_List h2 {
+        font-size: 20px;
+        margin-top: 10px;
+        margin-left: 15px;
+        color: darkblue;
+    }
 }
