@@ -17,6 +17,8 @@ const Navbar = () => {
   const modalEl = useRef();
   const { city, setCity } = useCity();
   const [showMenu, setShowMenu] = useState(false)
+    const [mobileMenu, setMobileMenu] = useState(false)
+
 
   useEffect(() => {
 
@@ -94,42 +96,65 @@ const Navbar = () => {
     document.body.classList.remove('blur');
   };
   return (
-    <div className={showLogin ? 'navbar blur' : 'navbar'}>
-      <div className="logo">
-        Smart<span>Utility</span>
-      </div>
-      <div className="navbar-list">
-        <ol>
-          <li onClick={() => navigate('/')}>HOME</li>
-          <li onClick={() => navigate('/#services')}>CATEGORY</li>
-          <li onClick={() => navigate('/postjob')}>POST JOB</li>
-          <li onClick={() => navigate('/#footer')}>CONTACT US</li>
-        </ol>
-      </div>
-      <div className="login">
-        {isLogin ?
-          <div>
-            <img className='profile-picture' onClick={handleOpenMenu} src={pro} alt="" />
-            {
-              showMenu && (
-                <div className="menu" ref={modalEl}>
-                  <ul>
-                    <li onClick={openProfile}>My Profile</li>
-                    <li onClick={openAppointments}>My Appointments</li>
-                    <li onClick={handleLogout}>Logout</li>
-                  </ul>
-                </div>
-              )
-
-            }
-          </div> :
-          <button onClick={handleLogin}>SIGN IN</button>
-        }
-      </div>
-
-      {showLogin && <LoginPop onClose={handleCloseLogin} />}
-
+   <div className={showLogin ? 'navbar blur' : 'navbar'}>
+    <div className="logo" onClick={() => navigate('/')}>
+      Smart<span>Utility</span>
     </div>
+
+    <div className="hamburger" onClick={() => setMobileMenu(!mobileMenu)}>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div className="navbar-list">
+      <ol>
+        <li onClick={() => navigate('/')}>HOME</li>
+        <li onClick={() => navigate('/#services')}>CATEGORY</li>
+        <li onClick={() => navigate('/postjob')}>POST JOB</li>
+        <li onClick={() => navigate('/#footer')}>CONTACT US</li>
+      </ol>
+    </div>
+
+    <div className="login">
+      {isLogin ? (
+        <div>
+          <img className="profile-picture" onClick={handleOpenMenu} src={pro} alt="" />
+          {showMenu && (
+            <div className="menu" ref={modalEl}>
+              <ul>
+                <li onClick={openProfile}>My Profile</li>
+                <li onClick={openAppointments}>My Appointments</li>
+                <li onClick={handleLogout}>Logout</li>
+              </ul>
+            </div>
+          )}
+        </div>
+      ) : (
+        <button onClick={handleLogin}>SIGN IN</button>
+      )}
+    </div>
+
+    {mobileMenu && (
+      <ul className="mobile-menu" ref={modalEl}>
+        <li onClick={() => navigate('/')}>Home</li>
+        <li onClick={() => navigate('/#services')}>Category</li>
+        <li onClick={() => navigate('/postjob')}>Post Job</li>
+        <li onClick={() => navigate('/#footer')}>Contact Us</li>
+        {isLogin ? (
+          <>
+            <li onClick={openProfile}>My Profile</li>
+            <li onClick={openAppointments}>My Appointments</li>
+            <li onClick={handleLogout}>Logout</li>
+          </>
+        ) : (
+          <li onClick={handleLogin}>SIGN IN</li>
+        )}
+      </ul>
+    )}
+
+    {showLogin && <LoginPop onClose={handleCloseLogin} />}
+  </div>
   )
 }
 
