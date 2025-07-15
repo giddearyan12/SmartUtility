@@ -18,7 +18,7 @@ const Appointments = () => {
     }
     const handleStatus = async (id, status) => {
         try {
-            const response = await axios.post(`${url}/job/cancel-appoint, { id, status });
+            const response = await axios.post(`${url}/job/cancel-appoint`, { id, status });
             toast.success(response.data.success)
             fetchData();
         } catch (error) {
