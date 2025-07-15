@@ -33,7 +33,7 @@
 
 @media (max-width: 768px) {
   .card {
-    width: 150px;
+    width: 160px;
     height: 60px;
     border: 1px solid #ddd;
     border-radius: 8px;
