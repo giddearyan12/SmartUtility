@@ -12,7 +12,7 @@ import axios from 'axios';
 const Navbar = () => {
   const navigate = useNavigate();
   const{authUser, setAuthUser} = useAuthUser();
-  const url =`https://smartutility-2.onrender.com/`;
+  const url =`https://smartutility-2.onrender.com`;
   const [isLogin, setisLogin] = useState(false);
   const modalEl = useRef();
   const { city, setCity } = useCity();
