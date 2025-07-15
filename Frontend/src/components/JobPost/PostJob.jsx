@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import './PostJob.css';
 
 const PostJob = () => {
+  const url = `https://smartutility-2.onrender.com/`
   const [userData, setUserData] = useState({});
   const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   const [selectedWeekDays, setSelectedWeekDays] = useState([]);
@@ -25,7 +26,7 @@ const PostJob = () => {
   useEffect(() => {
     const userId = jwtDecode(token)._id;
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:4000/user/getuser', {
+      const response = await axios.get(`${url}/user/getuser`, {
         params: { userId },
         headers:{
           Authorization:`Bearer ${token}`
@@ -66,7 +67,7 @@ const PostJob = () => {
       return;
     }
     console.log(data)
-    const response = await axios.post('http://localhost:4000/job/post', data);
+    const response = await axios.post(`${url}/job/post`, data);
     if (response.data.success) {
       toast.success('Registration Successful');
     } else {
