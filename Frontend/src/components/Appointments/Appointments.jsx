@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const Appointments = () => {
-    const url = 'https://smartutility-2.onrender.com/';
+    const url = 'https://smartutility-2.onrender.com';
     const token = localStorage.getItem('token');
     const [userRole, setUserRole] = useState('');
     const [userAppointments, setUserAppointments] = useState([]);
