@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import './PostJob.css';
 
 const PostJob = () => {
-  const url = `https://smartutility-2.onrender.com/`
+  const url = `https://smartutility-2.onrender.com`
   const [userData, setUserData] = useState({});
   const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   const [selectedWeekDays, setSelectedWeekDays] = useState([]);
