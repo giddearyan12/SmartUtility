@@ -11,8 +11,8 @@ import axios from 'axios';
 
 const Navbar = () => {
   const navigate = useNavigate();
-    const{authUser, setAuthUser} = useAuthUser();
-  
+  const{authUser, setAuthUser} = useAuthUser();
+  const url =`https://smartutility-2.onrender.com/`;
   const [isLogin, setisLogin] = useState(false);
   const modalEl = useRef();
   const { city, setCity } = useCity();
@@ -64,7 +64,7 @@ const Navbar = () => {
     setisLogin(false);
     localStorage.removeItem('token');
     localStorage.removeItem('city');
-    await axios.get('http://localhost:4000/user/logout', {
+    await axios.get(`${url}/user/logout`, {
       withCredentials: true
     });
     setAuthUser(null);
