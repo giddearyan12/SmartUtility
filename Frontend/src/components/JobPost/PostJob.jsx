@@ -26,7 +26,10 @@ const PostJob = () => {
     const userId = jwtDecode(token)._id;
     const fetchData = async () => {
       const response = await axios.get('http://localhost:4000/user/getuser', {
-        params: { userId }
+        params: { userId },
+        headers:{
+          Authorization:`Bearer ${token}`
+        }
       })
       const user = response.data.user;
       setUserData(user);
@@ -57,6 +60,7 @@ const PostJob = () => {
     event.preventDefault();
     data.name = userData.name;
     data.email = userData.email;
+    data.phone = userData.phone;
     if(selectedWeekDays.length==0){
       toast.warn('Please Select Availablity')
       return;
@@ -67,8 +71,6 @@ const PostJob = () => {
       toast.success('Registration Successful');
     } else {
       toast.warn(response.data.message);
-      
-
     }
   };
 
@@ -77,7 +79,7 @@ const PostJob = () => {
       <h2 id='post-job-title'>Post a Job <span >&#128188;</span></h2>
       <input onChange={onChangeHandler} type="text" name="name" value={userData.name || ""} readOnly required />
       <input onChange={onChangeHandler} type="email" name="email" value={userData.email || ""} readOnly required />
-      <input onChange={onChangeHandler} type="tel" name="phone" placeholder='Phone' required />
+      <input onChange={onChangeHandler} type="tel" name="phone" value={userData.phone || ""} required />
       <input onChange={onChangeHandler} type="number" name="experience" placeholder="Experience" min={0} required />
       <input onChange={onChangeHandler} type="text" name="city" placeholder="City" required />
       <select name="category" onChange={onChangeHandler} defaultValue=""

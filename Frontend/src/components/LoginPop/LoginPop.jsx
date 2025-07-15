@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { toast } from 'react-toastify'
 import './LoginPop.css'
+import {useAuthUser} from '../../context/authUser'
 
 const LoginPop = ({ onClose }) => {
+  const{authUser, setAuthUser} = useAuthUser();
   const url = 'http://localhost:4000';
   const [currState, setCurrState] = useState('Login')
   const [data, setData] = useState({
@@ -33,10 +35,11 @@ const LoginPop = ({ onClose }) => {
     }
 
     try {
-      const response = await axios.post(newUrl, data);
+      const response = await axios.post(newUrl, data, {withCredentials: true});
       if (response.data.success) {
         localStorage.setItem('token', response.data.token);
         toast.success("Welcome to SmartUtility 👋")
+        setAuthUser({token:response.data.token});
         onClose();
       } else {
         toast.warn(response.data.message);

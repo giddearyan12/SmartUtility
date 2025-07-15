@@ -42,6 +42,7 @@ const EmpProfile = () => {
         params: { userId },
         headers: {
           'Content-Type': 'application/json',
+          Authorization:`Bearer ${token}`
         },
         withCredentials: true,
       });
@@ -79,7 +80,6 @@ const EmpProfile = () => {
     });
   };
 
-console.log(data.availability)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

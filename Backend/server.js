@@ -9,8 +9,8 @@ import cookieParser from 'cookie-parser'
 
 const app = express()
 import cors from 'cors'
+const port = process.env.PORT || 4000;
 import mongoose from 'mongoose'
-const port = 4000
 
 
 mongoose.connect('mongodb+srv://giddearyan222:D8uRNStECM7qX3pn@cluster.qudnwbg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster')

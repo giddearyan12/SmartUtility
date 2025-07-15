@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useCity } from '../../context/CityContext';
 import './Card.css';
+import { toast } from 'react-toastify';
 
 const Card = () => {
   const url = 'http://localhost:4000';
   const [catData, setCatData] = useState([]);
+  const {city, setCity} = useCity();
 
   const fetchData = async () => {
     try {
@@ -24,7 +27,13 @@ const Card = () => {
   const navigate = useNavigate();
 
   const handleClick = (title) => {
-    navigate(`/category/${title}`); 
+    if(city){
+
+      navigate(`/category/${title}`); 
+    }
+    else{
+      toast.warn('Please Enter Your City...')
+    }
   };
   return (
     <>

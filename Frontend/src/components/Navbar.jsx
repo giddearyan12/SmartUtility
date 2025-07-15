@@ -1,17 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './Navbar.css'
 import { Navigate, useNavigate } from 'react-router-dom'
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import LoginPop from './LoginPop/LoginPop'
-import {jwtDecode} from 'jwt-decode'
+import { jwtDecode } from 'jwt-decode'
 import pro from '../assets/pro.jpeg'
 import { useCity } from '../context/CityContext'
+import { useAuthUser } from '../context/authUser';
+import axios from 'axios';
 
 const Navbar = () => {
   const navigate = useNavigate();
+    const{authUser, setAuthUser} = useAuthUser();
+  
   const [isLogin, setisLogin] = useState(false);
   const modalEl = useRef();
-  const {city, setCity} = useCity();
+  const { city, setCity } = useCity();
   const [showMenu, setShowMenu] = useState(false)
 
   useEffect(() => {
@@ -36,12 +40,12 @@ const Navbar = () => {
 
   const token = localStorage.getItem('token');
 
-  let decodedToken; 
+  let decodedToken;
 
   useEffect(() => {
     if (token) {
       setisLogin(true);
-      decodedToken =jwtDecode(token);
+      decodedToken = jwtDecode(token);
     }
   }, [token])
 
@@ -56,15 +60,23 @@ const Navbar = () => {
     }
   }
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     setisLogin(false);
     localStorage.removeItem('token');
     localStorage.removeItem('city');
+    await axios.get('http://localhost:4000/user/logout', {
+      withCredentials: true
+    });
+    setAuthUser(null);
     setCity('');
     toast.success('Logged Out...')
   }
   const openAppointments = () => {
     navigate('/appointments');
+    setShowMenu(false);
+  }
+  const openProfile = () => {
+    navigate('/profile');
     setShowMenu(false);
   }
 
@@ -102,6 +114,7 @@ const Navbar = () => {
               showMenu && (
                 <div className="menu" ref={modalEl}>
                   <ul>
+                    <li onClick={openProfile}>My Profile</li>
                     <li onClick={openAppointments}>My Appointments</li>
                     <li onClick={handleLogout}>Logout</li>
                   </ul>

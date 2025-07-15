@@ -26,7 +26,16 @@ const Appointments = () => {
     }
 
     const fetchData = async () => {
-        const response = await axios.get('http://localhost:4000/user/getuser', { params: { userId } });
+           if(!token){
+            toast.warn("You are not Logged In")
+            return;
+        }
+       const response = await axios.get('http://localhost:4000/user/getuser', {
+                params: { userId },
+                headers:{
+                    Authorization:`Bearer ${token}`
+                }
+            })
         const name = response.data.user.name;
         setUserRole(response.data.user.role);
         if (response.data.user.role == 'User') {
@@ -53,7 +62,7 @@ const Appointments = () => {
                 <table className="appoint-table">
                     <thead>
                         <tr>
-                         <th>Name</th>
+                            <th>Name</th>
                             <th>Date</th>
                             <th>Category</th>
                             <th>Address</th>
@@ -64,23 +73,23 @@ const Appointments = () => {
                     <tbody>{
                         userAppointments.map((appointment, index) => (
                             <tr key={index}>
-                                 <td>{appointment.employeeId.name}</td>
-                                    <td>{new Date(appointment.date).toLocaleString()}</td>
-                                    <td>{appointment.catId.name}</td>
-                                    <td>{appointment.address}</td>
-                                    <td>{appointment.status}</td>
-                                    <td >
-                                        {
-                                            appointment.status == 'pending' &&
-                                                <button onClick={() => handleStatus(appointment._id,'cancelled')}>Cancel</button>
-                                        }
-                                        {
-                                            appointment.status == 'accepted' &&<>
-                                                <button onClick={() => handleStatus(appointment._id,'completed')}>Completed</button>
-                                                <button onClick={() => handleStatus(appointment._id,'cancelled')}>Cancel</button></>
-                                        }
-                                       
-                                    </td>
+                                <td>{appointment.employeeId.name}</td>
+                                <td>{new Date(appointment.date).toLocaleString()}</td>
+                                <td>{appointment.catId.name}</td>
+                                <td>{appointment.address}</td>
+                                <td>{appointment.status}</td>
+                                <td >
+                                    {
+                                        appointment.status == 'pending' &&
+                                        <button onClick={() => handleStatus(appointment._id, 'cancelled')}>Cancel</button>
+                                    }
+                                    {
+                                        appointment.status == 'accepted' && <>
+                                            <button onClick={() => handleStatus(appointment._id, 'completed')}>Completed</button>
+                                            <button onClick={() => handleStatus(appointment._id, 'cancelled')}>Cancel</button></>
+                                    }
+
+                                </td>
                             </tr>
                         ))
                     }
@@ -110,15 +119,15 @@ const Appointments = () => {
                                     <td>{appointment.status}</td>
                                     <td >
                                         {
-                                            appointment.status == 'pending' &&<><button onClick={() => handleStatus(appointment._id,'accepted')}>Accept</button> 
-                                                <button onClick={() => handleStatus(appointment._id,'rejected')}>Reject</button></>
+                                            appointment.status == 'pending' && <><button onClick={() => handleStatus(appointment._id, 'accepted')}>Accept</button>
+                                                <button onClick={() => handleStatus(appointment._id, 'rejected')}>Reject</button></>
                                         }
                                         {
                                             appointment.status == 'accepted' &&
-                                                <button onClick={() => handleStatus(appointment._id,'rejected')}>Reject</button>
+                                            <button onClick={() => handleStatus(appointment._id, 'rejected')}>Reject</button>
                                         }
                                         {
-                                            appointment.status == 'rejected' &&<button onClick={() => handleStatus(appointment._id,'accepted')}>Accept</button> 
+                                            appointment.status == 'rejected' && <button onClick={() => handleStatus(appointment._id, 'accepted')}>Accept</button>
                                         }
                                     </td>
                                 </tr>
