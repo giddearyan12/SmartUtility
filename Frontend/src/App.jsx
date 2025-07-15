@@ -14,7 +14,7 @@ import { useCity } from './context/CityContext';
 
 const App = () => {
   const { authUser } = useAuthUser();
-  const {city, setCity}=useCity
+  const {city, setCity}=useCity();
 
   return (
     <div>
