@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 
 const Profile = () => {
     const token = localStorage.getItem('token');
+    const url = `https://smartutility-2.onrender.com`
     const [data, setData] = useState({
         name: '',
         email: '',
@@ -28,7 +29,7 @@ const Profile = () => {
         }
         const userId = jwtDecode(token)._id;
         const fetchData = async () => {
-            const response = await axios.get('http://localhost:4000/user/getuser', {
+            const response = await axios.get(`${url}/user/getuser`, {
                 params: { userId },
                 headers:{
                     Authorization:`Bearer ${token}`
@@ -43,7 +44,7 @@ const Profile = () => {
 
     const handleSubmit=async()=>{
         try {
-            const response = await axios.post('http://localhost:4000/user/update', {data})
+            const response = await axios.post(`${url}/user/update`, {data})
             setIsEditing(false)
         } catch (error) {
             console.log(error)
