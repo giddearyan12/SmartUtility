@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const Profile = () => {
     const token = localStorage.getItem('token');
-    const url = `https://smartutility-2.onrender.com`;
+    const url = `https://smartutility-2.onrender.com`;//added url
     const [data, setData] = useState({
         name: '',
         email: '',
