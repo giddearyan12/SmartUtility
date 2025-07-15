@@ -6,7 +6,7 @@ import './Card.css';
 import { toast } from 'react-toastify';
 
 const Card = () => {
-  const url = 'http://localhost:4000';
+  const url = 'https://smartutility-2.onrender.com/';
   const [catData, setCatData] = useState([]);
   const {city, setCity} = useCity();
 
