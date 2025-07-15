@@ -98,7 +98,7 @@ const EmpProfile = () => {
         toast.warn("You can't book you own appointment !")
         return;
       }
-      const response = await axios.post(`${url}/job/bookappointment', { formData: formData });
+      const response = await axios.post(`${url}/job/bookappointment`, { formData: formData });
 
 
       if (response.data.success) {
