@@ -6,7 +6,7 @@ import axios from 'axios'
 
 
 const CardEmp = ({ name, email, address, title }) => {
-  const url = 'https://smartutility-2.onrender.com/';
+  const url = 'https://smartutility-2.onrender.com';
 
   const navigate = useNavigate();
   const handleNavigate = () => {
