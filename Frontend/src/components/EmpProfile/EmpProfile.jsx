@@ -8,7 +8,7 @@ import pro from '../../assets/pro.jpeg';
 import axios from 'axios';
 
 const EmpProfile = () => {
-  const url ='https://smartutility-2.onrender.com/'
+  const url ='https://smartutility-2.onrender.com'
   const location = useLocation();
   const [catImg, setCatImg] = useState('');
   const [data, setData] = useState({});
