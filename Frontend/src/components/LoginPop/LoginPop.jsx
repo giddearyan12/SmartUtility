@@ -6,7 +6,7 @@ import {useAuthUser} from '../../context/authUser'
 
 const LoginPop = ({ onClose }) => {
   const{authUser, setAuthUser} = useAuthUser();
-  const url = 'http://localhost:4000';
+  const url = 'https://smartutility-2.onrender.com/';
   const [currState, setCurrState] = useState('Login')
   const [data, setData] = useState({
     email: "",
