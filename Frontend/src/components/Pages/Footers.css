@@ -21,3 +21,23 @@
     border-bottom: 2px solid orange;
     padding-bottom: 5px;
 }
+
+@media (max-width: 768px) {
+    .footers{
+    background-color: #F8F5FF;
+    width: 100%;
+    height: 200px;
+    position: relative; 
+    margin-top: 10px;
+}
+.footers-display{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footers-display h3{
+    border-bottom: 1px solid orange;
+    font-size: 12px;
+}
+}
