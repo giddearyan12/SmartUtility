@@ -22,7 +22,7 @@ mongoose.connect('mongodb+srv://giddearyan222:D8uRNStECM7qX3pn@cluster.qudnwbg.m
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cors({
-  origin: 'https://smart-utility-1.vercel.app', 
+  origin: 'https://smart-utility-wrhd.vercel.app', 
   credentials: true,
 }));
 app.use(cookieParser())
